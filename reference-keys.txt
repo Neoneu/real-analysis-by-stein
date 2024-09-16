@@ -16,7 +16,6 @@ thm:rf
 cor:unlabeled-div-8
 thm:d
 prp:unlabeled-div-9
-prerequisites
 ch1
 preliminaries
 the-exterior-measure

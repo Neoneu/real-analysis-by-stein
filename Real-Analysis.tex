@@ -36,46 +36,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -153,23 +113,10 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\chapter{Prerequisites}\label{prerequisites}
+\chapter*{Preface}\label{preface}
+\addcontentsline{toc}{chapter}{Preface}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\).
-
-The \textbf{bookdown} package can be installed from CRAN or Github:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{)}
-\CommentTok{\# or the development version}
-\CommentTok{\# devtools::install\_github("rstudio/bookdown")}
-\end{Highlighting}
-\end{Shaded}
-
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading \texttt{\#}.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.name/tinytex/}.
+This is a brief note of \emph{Real Analysis} by Elias M. Stein \& Rami Shakarchi.
 
 \chapter{Measure Theory}\label{ch1}
 
@@ -653,7 +600,7 @@ m(A+B)^{1/d}\ge m(A)^{1/d}+m(B)^{1/d}.
 
 \section{Problem}\label{problem}
 
-\chapter{Integration theory}\label{ch2}
+\chapter{Integration Theory}\label{ch2}
 
 \section{The lebesgue integral: basic properties and convergence theorems}\label{the-lebesgue-integral-basic-properties-and-convergence-theorems}
 
@@ -738,13 +685,13 @@ Suppose \(f\) and \(g\) are bounded functions supported on sets of finite measur
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Linearity
+  Linearity.
 \item
-  Additivity
+  Additivity.
 \item
-  Monotonicity
+  Monotonicity.
 \item
-  Triangle inequality
+  Triangle inequality.
 \end{enumerate}
 
 \end{proposition}
@@ -752,7 +699,7 @@ Suppose \(f\) and \(g\) are bounded functions supported on sets of finite measur
 \begin{theorem}[Bounded convergence theorem]
 \protect\hypertarget{thm:b}{}\label{thm:b}\leavevmode
 
-Suppose that \(\{f_n\}\) is a sequence of measurable functions that are all bounded by \(M\), are supported on a set \(E\) of finite measure, and \(f_n(x)\to f(x)\) a.e. \(x\) as \(n\to\infty\). Then \(f\)is measurable, bounded ,supported on \(E\) for a.e. \(x\), and
+Suppose that \(\{f_n\}\) is a sequence of measurable functions that are all bounded by \(M\), are supported on a set \(E\) of finite measure, and \(f_n(x)\to f(x)\) a.e. \(x\) as \(n\to\infty\). Then \(f\) is measurable, bounded ,supported on \(E\) for a.e. \(x\), and
 \[
 \int|f_n-f|\to 0 \text{ as } n\to\infty.
 \]
@@ -763,7 +710,7 @@ Consequently,
 
 \emph{Proof.}
 
-The proof is a reprise of the argument in Lemma \ref{lem:l}. Fiven \(\epsilon>0\), we may find, by Egorov' theorem,
+The proof is a reprise of the argument in Lemma \ref{lem:l}. Given \(\epsilon>0\), we may find, by Egorov' theorem,
 \[
 \begin{aligned}
 \int|f_n-f| &\le \int_{A_\epsilon}|f_n-f|+\int_{E-A_\epsilon}|f_n-f|\\
@@ -776,43 +723,275 @@ for all large \(n\).
 
 \subsection{Return to Riemann integrable functions}\label{return-to-riemann-integrable-functions}
 
+\begin{theorem}
+\leavevmode
+
+Suppose \(f\) os Riemann integrable on the closed interval \([a,b]\). Then \(f\) is measurable, and
+\[
+\cal \int_{[a,b]}^Rf(x)\ dx=\int_{[a,b]}^Lf(x)\ dx.
+\]
+
+\emph{Proof.}
+
+By definition of Riemann integrability, \(f\) is bounded, say \(|f(x)|\le M\), and we may construct two consequences of step functions \(\{\varphi_k\}\) and \(\{\psi_k\}\) that satisfy the following properties: \(|\varphi_k(x)\le M|\) and \(|\psi_k(x)\le M|\) for all \(x\in[a,b]\) and \(k\ge 1\),
+\[
+\varphi_1(x)\le \varphi_2(x) \le \cdots\le f\le\cdots\le \psi_2(x)\le \psi_1,
+\]
+and
+\[
+\lim_{k\to\infty}\cal \int_{[a,b]}^R\varphi_k(x)\ dx=\lim_{k\to\infty}\cal \int_{[a,b]}^R\psi_k(x)\ dx=\cal \int_{[a,b]}^Rf(x)\ dx.
+\]
+Notice that
+\[
+\int_{[a,b]}^\mathcal{R}\varphi_k(x)\ dx=\int_{[a,b]}^\mathcal{L}\varphi_k(x)\ dx \text{ and }\cal \int_{[a,b]}^R\psi_k(x)\ dx=\cal \int_{[a,b]}^L\psi_k(x)\ dx.
+\]
+Consider Theorem \ref{thm:b} (Bounded convergence theorem) and you will complete the proof.
+
+\end{theorem}
+
 \subsection{Stage three: non-negative functions}\label{stage-three-non-negative-functions}
+
+In the case of such a function \(f\) we define its \textbf{Lebesgue integral} by
+\[
+\int f =\sup_g\int g.
+\]
+
+\begin{proposition}
+
+The integral of non-negative measurable functions enjoys the following properties:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Linearity.
+\item
+  Additivity.
+\item
+  Monotonicity.
+\item
+  If \(g\) is integrable and \(0\le f\le g\), then \(f\) is integrable.
+\item
+  If \(f\) is integrable, then \(f(x)<\infty\) for a.e. \(x\).
+\item
+  If \(\int f=0\), then \(f(x)=0\) for a.e. \(x\).
+
+  \emph{Proof.}
+
+  We just prove the first assertion. Let \(\varphi\), \(\psi\) and \(\eta\) be non-negative functions bounded and supported on sets of finite measure, where \(\varphi\le f\), \(\psi\le g\) and \(\eta\le f+g\), then \(\varphi+\psi\le f+g\). Consequently,
+  \[
+  \int f+ \int g\le \int (f+g).
+  \]
+  On the other hand, if we define \(\eta_1=\min(f(x),\eta(x))\) and \(\eta_2=\eta-\eta_1\), then
+  \[
+  \int \eta=\int(\eta_1+\eta_2)=\int \eta_1+\int \eta_2\le\int f+ \int g,
+  \]
+  which means that
+  \[
+  \int (f+g)\le \int f+ \int g.
+  \]
+\end{enumerate}
+
+\end{proposition}
+
+\begin{lemma}[Fatou]
+\protect\hypertarget{lem:fatou}{}\label{lem:fatou}\leavevmode
+
+Suppose \(\{f_n\}\) is a sequence of measurable functions with \(f_n\ge 0\). If \(\lim_{n\to\infty}f_n(x)=f(x)\) for a.e. \(x\), then
+\[
+\int f\leq \liminf_{n\to\infty}\int f_n.
+\]
+
+\emph{Proof.}
+
+Suppose \(0\le g\le f\), where \(g\) is bounded and supported on a set \(E\) of finite measure. If we set \(g_n(x)=\min(g(x),f_n(x))\), then \(g_n\to g\) a.e. as \(n\to \infty\). By Theorem \ref{thm:b} (Bounded convergence theorem) we have
+\[
+\int g_n\to \int g.
+\]
+Since \(g_n\le f_n\), we have \(\int f_n\le \int g_n\), so that
+\[
+\int g\le \liminf_{n\to\infty}\int f_n.
+\]
+Taking the supremum over all \(g\) yields the desired inequality.
+
+\end{lemma}
+
+\begin{corollary}
+Suppose \(f\) is a non-negative measurable function, and \(\{f_n\}\) a sequence of non-negative measurable functions with \(f_n(x) \le f(x)\) and \(f_n(x)\to f(x)\) for a.e. \(x\). Then
+\[
+\lim_{n\to\infty}\int f_n=\int f.
+\]
+\end{corollary}
+
+\begin{corollary}[Monotone convergence theorem]
+\protect\hypertarget{cor:m}{}\label{cor:m}Suppose \(\{f_n\}\) a sequence of non-negative measurable functions with \(f_n(x) \nearrow f(x)\). Then
+\[
+\lim_{n\to\infty}\int f_n=\int f.
+\]
+\end{corollary}
+
+\begin{corollary}
+\protect\hypertarget{cor:sm}{}\label{cor:sm}Consider a series \(\sum_{k=1}^{\infty}a_k(x)\), where \(a_k(x)\ge 0\) is measurable for every \(k\ge 1\). Then
+\[
+\int \sum_{k=1}^{\infty}a_k(x)\ dx =\sum_{k=1}^{\infty}\int a_k(x)\ dx.
+\]
+\end{corollary}
 
 \subsection{General form}\label{general-form}
 
-\chapter{Methods}\label{methods}
-
-We describe our methods in this chapter.
-
-Math can be added in body using usual syntax like this
-
-\section{math example}\label{math-example}
-
-\(p\) is unknown but expected to be around 1/3. Standard error will be approximated
-
+In this case, we define the \textbf{Lebesgue integral} of \(f\) by
 \[
-SE = \sqrt{\frac{p(1-p)}{n}} \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
+\int f =\int f^+-\int f^-.
 \]
 
-You can also use math in footnotes like this\footnote{where we mention \(p = \frac{a}{b}\)}.
+\begin{proposition}
+The integral of Lebesgue integrable functions is linear, additive, monotonic, and satisfies the triangle inequality.
+\end{proposition}
 
-We will approximate standard error to 0.027\footnote{\(p\) is unknown but expected to be around 1/3. Standard error will be approximated
+\begin{proposition}
+\protect\hypertarget{prp:uc}{}\label{prp:uc}
 
+Suppose \(f\) is integral on \(\mathbb{R}^d\). Then for every \(\epsilon>0\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  There exists a set of finite measure \(B\) (a ball, for example) such that
   \[
-  SE = \sqrt{\frac{p(1-p)}{n}} \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
-  \]}
+  \int_{B^c}|f|<\epsilon.
+  \]
+\item
+  There is a \(\delta>0\) such that
+  \[
+  \int_E|f|<\epsilon\quad \text{ whenever }m(E)<\delta.
+  \]
 
-\chapter{Applications}\label{applications}
+  \emph{Proof.}
 
-Some \emph{significant} applications are demonstrated in this chapter.
+  Assume that \(f\ge 0\): 1. \(B_N=(-N,N)\); 2. \(E_N=\{x:f(x)\le N\}\).
+\end{enumerate}
 
-\section{Example one}\label{example-one}
+\end{proposition}
 
-\section{Example two}\label{example-two}
+\begin{theorem}[Dominated convergence theorem]
+\protect\hypertarget{thm:dc}{}\label{thm:dc}\leavevmode
 
-\chapter{Final Words}\label{final-words}
+Suppose \(\{f_n\}\) is a sequence of measurable functions such that \(f_n\to f\) a.e. \(x\) as \(n\) tends to infinity. If \(f_n(x)\le g(x)\), where \(g\) is integrable, then
+\[
+\int |f_n-f|\to 0 \quad \text{ as }n\to \infty,
+\]
+and consequently
+\[
+\int f_n \to \int f.
+\]
 
-We have finished a nice book.
+\emph{Proof.}
+
+For each \(N\ge 0\) let \(E_N=\{x:|x|\le N, g(x)\le N\}\).
+\[
+\begin{aligned}
+\int|f_n-f|&=\int_{E_N}|f_n-f|+\int_{E_N^c}|f_n-f|\\
+&\le \int_{E_N}|f_n-f|+2\int_{E_N^c}g\\
+&\le \epsilon +2\epsilon
+\end{aligned}
+\]
+for all large \(n\). This prove the theorem.
+
+\end{theorem}
+
+\subsection{Complex-valued functions}\label{complex-valued-functions}
+
+The collection of all complex-valued integrable functions on a measurable subset \(E\subset \mathbb{R}^d\) forms a vector space over \(\mathbb{C}\).
+
+\section{\texorpdfstring{The space \(L^1\) of integrable functions}{The space L\^{}1 of integrable functions}}\label{the-space-l1-of-integrable-functions}
+
+For any integrable function \(f\) on \(\mathbb{R}^d\) we define the \(L^1\)-norm of \(f\),
+\[
+\|f\|=\|f\|_{L^1}=\|f\|_{L^1(\mathbb{R}^d)}=\int_{\mathbb{R}^d}|f|.
+\]
+
+\begin{proposition}
+
+Suppose \(f\) and \(g\) are two functions in \(L^1(\mathbb{R}^d)\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\|af\|=|a|\|f\|\) for all \(a\in\mathbb{C}\).
+\item
+  \(\|f+g\|\le \|f\|+\|g\|\).
+\item
+  \(\|f\|=0\) iff \(f=0\) a.e.
+\item
+  \(d(f,g)=\|f-g\|\) defines a metric on \(L^1(\mathbb{R}^d)\).
+\end{enumerate}
+
+\end{proposition}
+
+\begin{theorem}[Riesz-Fischer]
+\protect\hypertarget{thm:rf}{}\label{thm:rf}The vector space \(L^1\) is complete in its metric.
+\end{theorem}
+
+\begin{corollary}
+If \(\{f_n\}_{n=1}^\infty\) converges to \(f\) in \(L^1\), the nthere exists a subsequence \(\{f_{n_k}\}_{k=1}^\infty\) such that
+\[
+f_{n_k}(x)\to f(x)\quad a.e. x.
+\]
+\end{corollary}
+
+We say that a family \(\cal G\) of integrable functions is \textbf{dense} in \(L^1\) if for ant \(f\in L^1\) and \(\epsilon>0\), there exists \(g\in\cal G\) so that \(\|f-g\|<\epsilon\).
+
+\begin{theorem}
+\protect\hypertarget{thm:d}{}\label{thm:d}
+
+The following families of functions are dense in \(L^1(\mathbb{R}^d)\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The simple functions.
+\item
+  The step functions.
+\item
+  The continuous functions of compact support.
+\end{enumerate}
+
+\end{theorem}
+
+\subsection{Invariance properties}\label{invariance-properties}
+
+\subsection{Translations and continuity}\label{translations-and-continuity}
+
+\begin{proposition}
+\leavevmode
+
+Suppose \(f\in L^1(\mathbb{R}^d)\). Then
+\[
+\|f_h-f\|\to 0\quad \text{ as }h\to 0.
+\]
+
+\emph{Proof.}
+
+By Theorem \ref{thm:d}, find a continuous function with compact support to approximate \(f\).
+
+\end{proposition}
+
+\section{Fubini's theorem}\label{fubinis-theorem}
+
+\section{A Fourier inversion formula}\label{a-fourier-inversion-formula}
+
+\section{Exercise}\label{exercise-1}
+
+\section{Problem}\label{problem-1}
+
+:::
+
+\chapter{Differentiation and Integration}\label{ch3}
+
+\section{Differentiation of the integral}\label{differentiation-of-the-integral}
 
   \bibliography{book.bib,packages.bib}
 

@@ -1,3 +1,0 @@
-# Differentiation and Integration {#ch3}
-
-## Differentiation of the integral
