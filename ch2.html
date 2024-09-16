@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Integration Theory | Real analysis</title>
+  <meta name="description" content="This is a brief note of Real Analysis by Elias M. Stein &amp; Rami Shakarchi." />
+  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Integration Theory | Real analysis" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a brief note of Real Analysis by Elias M. Stein &amp; Rami Shakarchi." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Integration Theory | Real analysis" />
+  
+  <meta name="twitter:description" content="This is a brief note of Real Analysis by Elias M. Stein &amp; Rami Shakarchi." />
+  
+
+<meta name="author" content="Zijie Xia" />
+
+
+<meta name="date" content="2024-08-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch1.html"/>
+<link rel="next" href="ch3.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Real analysis</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="ch1.html"><a href="ch1.html"><i class="fa fa-check"></i><b>2</b> Measure Theory</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch1.html"><a href="ch1.html#preliminaries"><i class="fa fa-check"></i><b>2.1</b> Preliminaries</a></li>
+<li class="chapter" data-level="2.2" data-path="ch1.html"><a href="ch1.html#the-exterior-measure"><i class="fa fa-check"></i><b>2.2</b> The exterior measure</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="ch1.html"><a href="ch1.html#properties-of-the-exterior-measure"><i class="fa fa-check"></i><b>2.2.1</b> Properties of the exterior measure</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="ch1.html"><a href="ch1.html#measurable-sets-and-the-lebesgue-measure"><i class="fa fa-check"></i><b>2.3</b> Measurable sets and the Lebesgue measure</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ch1.html"><a href="ch1.html#invariance-properties-of-lebesgue-measure"><i class="fa fa-check"></i><b>2.3.1</b> Invariance properties of Lebesgue measure</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ch1.html"><a href="ch1.html#sigma-algebra-and-borel-sets"><i class="fa fa-check"></i><b>2.3.2</b> <span class="math inline">\(\sigma\)</span>-algebra and Borel sets</a></li>
+<li class="chapter" data-level="2.3.3" data-path="ch1.html"><a href="ch1.html#construction-of-a-non-measurable-set"><i class="fa fa-check"></i><b>2.3.3</b> Construction of a non-measurable set</a></li>
+<li class="chapter" data-level="2.3.4" data-path="ch1.html"><a href="ch1.html#axiom-of-choice"><i class="fa fa-check"></i><b>2.3.4</b> Axiom of choice</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ch1.html"><a href="ch1.html#measurable-functions"><i class="fa fa-check"></i><b>2.4</b> Measurable functions</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="ch1.html"><a href="ch1.html#definition-and-basic-properties"><i class="fa fa-check"></i><b>2.4.1</b> Definition and basic properties</a></li>
+<li class="chapter" data-level="2.4.2" data-path="ch1.html"><a href="ch1.html#approximation-by-simple-functions-or-step-functions"><i class="fa fa-check"></i><b>2.4.2</b> Approximation by simple functions or step functions</a></li>
+<li class="chapter" data-level="2.4.3" data-path="ch1.html"><a href="ch1.html#littlewoods-three-principles"><i class="fa fa-check"></i><b>2.4.3</b> Littlewood’s three principles</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="ch1.html"><a href="ch1.html#the-brunn-minkowski-inequality"><i class="fa fa-check"></i><b>2.5</b> The Brunn-Minkowski inequality</a></li>
+<li class="chapter" data-level="2.6" data-path="ch1.html"><a href="ch1.html#exercise"><i class="fa fa-check"></i><b>2.6</b> Exercise</a></li>
+<li class="chapter" data-level="2.7" data-path="ch1.html"><a href="ch1.html#problem"><i class="fa fa-check"></i><b>2.7</b> Problem</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch2.html"><a href="ch2.html"><i class="fa fa-check"></i><b>3</b> Integration Theory</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch2.html"><a href="ch2.html#the-lebesgue-integral-basic-properties-and-convergence-theorems"><i class="fa fa-check"></i><b>3.1</b> The lebesgue integral: basic properties and convergence theorems</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="ch2.html"><a href="ch2.html#stage-one-simple-functions"><i class="fa fa-check"></i><b>3.1.1</b> Stage one: simple functions</a></li>
+<li class="chapter" data-level="3.1.2" data-path="ch2.html"><a href="ch2.html#stage-two-bounded-functions-supported-on-a-set-of-finite-measure"><i class="fa fa-check"></i><b>3.1.2</b> Stage two: bounded functions supported on a set of finite measure</a></li>
+<li class="chapter" data-level="3.1.3" data-path="ch2.html"><a href="ch2.html#return-to-riemann-integrable-functions"><i class="fa fa-check"></i><b>3.1.3</b> Return to Riemann integrable functions</a></li>
+<li class="chapter" data-level="3.1.4" data-path="ch2.html"><a href="ch2.html#stage-three-non-negative-functions"><i class="fa fa-check"></i><b>3.1.4</b> Stage three: non-negative functions</a></li>
+<li class="chapter" data-level="3.1.5" data-path="ch2.html"><a href="ch2.html#general-form"><i class="fa fa-check"></i><b>3.1.5</b> General form</a></li>
+<li class="chapter" data-level="3.1.6" data-path="ch2.html"><a href="ch2.html#complex-valued-functions"><i class="fa fa-check"></i><b>3.1.6</b> Complex-valued functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="ch2.html"><a href="ch2.html#the-space-l1-of-integrable-functions"><i class="fa fa-check"></i><b>3.2</b> The space <span class="math inline">\(L^1\)</span> of integrable functions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="ch2.html"><a href="ch2.html#invariance-properties"><i class="fa fa-check"></i><b>3.2.1</b> Invariance properties</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ch2.html"><a href="ch2.html#translations-and-continuity"><i class="fa fa-check"></i><b>3.2.2</b> Translations and continuity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ch2.html"><a href="ch2.html#fubinis-theorem"><i class="fa fa-check"></i><b>3.3</b> Fubini’s theorem</a></li>
+<li class="chapter" data-level="3.4" data-path="ch2.html"><a href="ch2.html#a-fourier-inversion-formula"><i class="fa fa-check"></i><b>3.4</b> A Fourier inversion formula</a></li>
+<li class="chapter" data-level="3.5" data-path="ch2.html"><a href="ch2.html#exercise-1"><i class="fa fa-check"></i><b>3.5</b> Exercise</a></li>
+<li class="chapter" data-level="3.6" data-path="ch2.html"><a href="ch2.html#prooblem"><i class="fa fa-check"></i><b>3.6</b> Prooblem</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch3.html"><a href="ch3.html"><i class="fa fa-check"></i><b>4</b> Differentiation and Integration</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch3.html"><a href="ch3.html#differentiation-of-the-integral"><i class="fa fa-check"></i><b>4.1</b> Differentiation of the integral</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://neoneu.github.io/" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Real analysis</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch2" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Integration Theory<a href="ch2.html#ch2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="the-lebesgue-integral-basic-properties-and-convergence-theorems" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> The lebesgue integral: basic properties and convergence theorems<a href="ch2.html#the-lebesgue-integral-basic-properties-and-convergence-theorems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="stage-one-simple-functions" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Stage one: simple functions<a href="ch2.html#stage-one-simple-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-1" class="proposition"><strong>Proposition 3.1  </strong></span>The integral of simpe functions defined bve satifies the following properties:</p>
+<ol style="list-style-type: decimal">
+<li>Independence of the representation. If <span class="math inline">\(\varphi=\sum_{k=1}^Na_k\chi_{E_k}\)</span> is any representation of <span class="math inline">\(\varphi\)</span>, then
+<span class="math display">\[
+\int \varphi=\sum_{k=1}^Na_km(E_k).
+\]</span></li>
+<li>Linearity.</li>
+<li>Additivity.</li>
+<li>Monotonicity.</li>
+<li>Triangle inequality. If <span class="math inline">\(\varphi\)</span> is a simple function, then so is <span class="math inline">\(|\varphi|\)</span>, and
+<span class="math display">\[
+\left|\int\varphi\right|\le \int|\varphi|.
+\]</span></li>
+</ol>
+</div>
+</div>
+<div id="stage-two-bounded-functions-supported-on-a-set-of-finite-measure" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Stage two: bounded functions supported on a set of finite measure<a href="ch2.html#stage-two-bounded-functions-supported-on-a-set-of-finite-measure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="lemma">
+<p><span id="lem:l" class="lemma"><strong>Lemma 3.1  </strong></span>Let <span class="math inline">\(f\)</span> be a bounded function supported on a set <span class="math inline">\(E\)</span> of finite measure. If <span class="math inline">\(\{\varphi_n\}_{n=1}^\infty\)</span> is any sequence of simple functions bounded by <span class="math inline">\(M\)</span>, supported on <span class="math inline">\(E\)</span>, and with <span class="math inline">\(\varphi_n(x)\to f(x)\)</span> for a.e. <span class="math inline">\(x\)</span>, then:</p>
+<ol style="list-style-type: decimal">
+<li>The limit <span class="math inline">\(\lim_{n\to\infty}\int\varphi_n\)</span> exists.</li>
+<li>If <span class="math inline">\(f=0\)</span> a.e., then the limit <span class="math inline">\(\lim_{n\to\infty}\int\varphi_n\)</span> equals 0.</li>
+</ol>
+</div>
+<details>
+<summary>
+<em>Proof.</em>
+</summary>
+Setting <span class="math inline">\(I_n=\int\varphi_n\)</span> and applying Egorov’s theorem which is proven in Chapter <a href="ch1.html#ch1">2</a> we have that for and large <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span>
+<span class="math display">\[
+\begin{aligned}
+|I_n-I_m| &amp;\le \int_E|\varphi_n-\varphi_m|\\
+&amp;=\int_{A_\epsilon}|\varphi_n-\varphi_m|+\int_{E-A_\epsilon}|\varphi_n-\varphi_m|\\
+&amp;\le \int_{A_\epsilon}\epsilon\ dx+\int_{E-A_\epsilon}2M\ dx\\
+&amp;\le m(E)\epsilon+2M\epsilon.
+\end{aligned}
+\]</span>
+given any <span class="math inline">\(\epsilon&gt;0\)</span>.
+This proves that <span class="math inline">\(\{I_n\}\)</span> os a Cauchy sequence nd hence converges. If <span class="math inline">\(f=0\)</span>, letting <span class="math inline">\(m\)</span> tend to infinity we have <span class="math inline">\(|I_n-f|=|I_n|\le m(E)\epsilon+2M\epsilon\)</span>, which yields <span class="math inline">\(\lim_{n\to\infty}I_n=0\)</span>.
+</details>
+<p>For a bounded function <span class="math inline">\(f\)</span> that is supported on sets of finite measure, we define its <strong>Lebesgue integral</strong> by
+<span class="math display">\[
+\int f=\lim_{n\to\infty}\int\varphi_n.
+\]</span>
+where <span class="math inline">\(\{\varphi_n\}\)</span> is any sequence of simple functions satisfying: <span class="math inline">\(|\varphi_n|\le M\)</span>, each <span class="math inline">\(\varphi_n\)</span> is supported on the support of <span class="math inline">\(f\)</span>, and <span class="math inline">\(\varphi_n(x)\to f(x)\)</span> for a.e. <span class="math inline">\(x\)</span> as <span class="math inline">\(n\)</span> tends to infinity.</p>
+<p>Next, we must show that <span class="math inline">\(\int f\)</span> is independent of the limiting sequence <span class="math inline">\(\{\varphi_n\}\)</span> used, in order for the integral to be well-defined. Suppose that <span class="math inline">\(\{\psi_n\}\)</span> is another sequence of simple functions that satisfies the properties above. Then, if <span class="math inline">\(\eta_n = \varphi_n- \psi_n\)</span>, the sequence <span class="math inline">\(\{\eta_n\}\)</span> consists of simple functions bounded by <span class="math inline">\(2M\)</span>, supported on a set of finite measure, and such that <span class="math inline">\(\eta_n\to 0\)</span> a.e. as <span class="math inline">\(n\)</span> tends to infinity. Applying the lemma we find
+<span class="math display">\[
+\lim_{n\to\infty}\int \varphi_n =\lim_{n\to\infty}\int \psi_n+\lim_{n\to\infty}\int \eta_n=\lim_{n\to\infty}\int \psi_n
+\]</span>
+as desired.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-2" class="proposition"><strong>Proposition 3.2  </strong></span>Suppose <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are bounded functions supported on sets of finite measure. Then the following properties hold.</p>
+<ol style="list-style-type: decimal">
+<li>Linearity.</li>
+<li>Additivity.</li>
+<li>Monotonicity.</li>
+<li>Triangle inequality.</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:b" class="theorem"><strong>Theorem 3.1  (Bounded convergence theorem) </strong></span></p>
+Suppose that <span class="math inline">\(\{f_n\}\)</span> is a sequence of measurable functions that are all bounded by <span class="math inline">\(M\)</span>, are supported on a set <span class="math inline">\(E\)</span> of finite measure, and <span class="math inline">\(f_n(x)\to f(x)\)</span> a.e. <span class="math inline">\(x\)</span> as <span class="math inline">\(n\to\infty\)</span>. Then <span class="math inline">\(f\)</span> is measurable, bounded ,supported on <span class="math inline">\(E\)</span> for a.e. <span class="math inline">\(x\)</span>, and
+<span class="math display">\[
+\int|f_n-f|\to 0 \text{ as } n\to\infty.
+\]</span>
+Consequently,
+<span class="math display">\[
+\int f_n\to \int f  \text{ as } n\to\infty.
+\]</span>
+<details>
+<summary>
+<em>Proof.</em>
+</summary>
+The proof is a reprise of the argument in Lemma <a href="ch2.html#lem:l">3.1</a>. Given <span class="math inline">\(\epsilon&gt;0\)</span>, we may find, by Egorov’ theorem,
+<span class="math display">\[
+\begin{aligned}
+\int|f_n-f| &amp;\le \int_{A_\epsilon}|f_n-f|+\int_{E-A_\epsilon}|f_n-f|\\
+&amp;\le m(E)\epsilon+2M\epsilon.
+\end{aligned}
+\]</span>
+for all large <span class="math inline">\(n\)</span>.
+</details>
+</div>
+</div>
+<div id="return-to-riemann-integrable-functions" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Return to Riemann integrable functions<a href="ch2.html#return-to-riemann-integrable-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-3" class="theorem"><strong>Theorem 3.2  </strong></span></p>
+Suppose <span class="math inline">\(f\)</span> os Riemann integrable on the closed interval <span class="math inline">\([a,b]\)</span>. Then <span class="math inline">\(f\)</span> is measurable, and
+<span class="math display">\[
+\cal \int_{[a,b]}^Rf(x)\ dx=\int_{[a,b]}^Lf(x)\ dx.
+\]</span>
+<details>
+<summary>
+<em>Proof.</em>
+</summary>
+By definition of Riemann integrability, <span class="math inline">\(f\)</span> is bounded, say <span class="math inline">\(|f(x)|\le M\)</span>, and we may construct two consequences of step functions <span class="math inline">\(\{\varphi_k\}\)</span> and <span class="math inline">\(\{\psi_k\}\)</span> that satisfy the following properties: <span class="math inline">\(|\varphi_k(x)\le M|\)</span> and <span class="math inline">\(|\psi_k(x)\le M|\)</span> for all <span class="math inline">\(x\in[a,b]\)</span> and <span class="math inline">\(k\ge 1\)</span>,
+<span class="math display">\[
+\varphi_1(x)\le \varphi_2(x) \le \cdots\le f\le\cdots\le \psi_2(x)\le \psi_1,
+\]</span>
+and
+<span class="math display">\[
+\lim_{k\to\infty}\cal \int_{[a,b]}^R\varphi_k(x)\ dx=\lim_{k\to\infty}\cal \int_{[a,b]}^R\psi_k(x)\ dx=\cal \int_{[a,b]}^Rf(x)\ dx.
+\]</span>
+Notice that
+<span class="math display">\[
+\int_{[a,b]}^\mathcal{R}\varphi_k(x)\ dx=\int_{[a,b]}^\mathcal{L}\varphi_k(x)\ dx \text{ and }\cal \int_{[a,b]}^R\psi_k(x)\ dx=\cal \int_{[a,b]}^L\psi_k(x)\ dx.
+\]</span>
+Consider Theorem <a href="ch2.html#thm:b">3.1</a> (Bounded convergence theorem) and you will complete the proof.
+</details>
+</div>
+</div>
+<div id="stage-three-non-negative-functions" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Stage three: non-negative functions<a href="ch2.html#stage-three-non-negative-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the case of such a function <span class="math inline">\(f\)</span> we define its <strong>Lebesgue integral</strong> by
+<span class="math display">\[
+\int f =\sup_g\int g.
+\]</span></p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-4" class="proposition"><strong>Proposition 3.3  </strong></span>The integral of non-negative measurable functions enjoys the following properties:</p>
+<ol style="list-style-type: decimal">
+<li>Linearity.</li>
+<li>Additivity.</li>
+<li>Monotonicity.</li>
+<li>If <span class="math inline">\(g\)</span> is integrable and <span class="math inline">\(0\le f\le g\)</span>, then <span class="math inline">\(f\)</span> is integrable.</li>
+<li>If <span class="math inline">\(f\)</span> is integrable, then <span class="math inline">\(f(x)&lt;\infty\)</span> for a.e. <span class="math inline">\(x\)</span>.</li>
+<li>If <span class="math inline">\(\int f=0\)</span>, then <span class="math inline">\(f(x)=0\)</span> for a.e. <span class="math inline">\(x\)</span>.
+<details>
+<summary>
+<em>Proof.</em>
+</summary>
+We just prove the first assertion. Let <span class="math inline">\(\varphi\)</span>, <span class="math inline">\(\psi\)</span> and <span class="math inline">\(\eta\)</span> be non-negative functions bounded and supported on sets of finite measure, where <span class="math inline">\(\varphi\le f\)</span>, <span class="math inline">\(\psi\le g\)</span> and <span class="math inline">\(\eta\le f+g\)</span>, then <span class="math inline">\(\varphi+\psi\le f+g\)</span>. Consequently,
+<span class="math display">\[
+\int f+ \int g\le \int (f+g).
+\]</span>
+On the other hand, if we define <span class="math inline">\(\eta_1=\min(f(x),\eta(x))\)</span> and <span class="math inline">\(\eta_2=\eta-\eta_1\)</span>, then
+<span class="math display">\[
+\int \eta=\int(\eta_1+\eta_2)=\int \eta_1+\int \eta_2\le\int f+ \int g,
+\]</span>
+which means that
+<span class="math display">\[
+\int (f+g)\le \int f+ \int g.
+\]</span>
+</details></li>
+</ol>
+</div>
+<div class="lemma">
+<p><span id="lem:fatou" class="lemma"><strong>Lemma 3.2  (Fatou) </strong></span></p>
+Suppose <span class="math inline">\(\{f_n\}\)</span> is a sequence of measurable functions with <span class="math inline">\(f_n\ge 0\)</span>. If <span class="math inline">\(\lim_{n\to\infty}f_n(x)=f(x)\)</span> for a.e. <span class="math inline">\(x\)</span>, then
+<span class="math display">\[
+\int f\leq \liminf_{n\to\infty}\int f_n.
+\]</span>
+<details>
+<summary>
+<em>Proof.</em>
+</summary>
+Suppose <span class="math inline">\(0\le g\le f\)</span>, where <span class="math inline">\(g\)</span> is bounded and supported on a set <span class="math inline">\(E\)</span> of finite measure. If we set <span class="math inline">\(g_n(x)=\min(g(x),f_n(x))\)</span>, then <span class="math inline">\(g_n\to g\)</span> a.e. as <span class="math inline">\(n\to \infty\)</span>. By Theorem <a href="ch2.html#thm:b">3.1</a> (Bounded convergence theorem) we have
+<span class="math display">\[
+\int g_n\to \int g.
+\]</span>
+Since <span class="math inline">\(g_n\le f_n\)</span>, we have <span class="math inline">\(\int f_n\le \int g_n\)</span>, so that
+<span class="math display">\[
+\int g\le \liminf_{n\to\infty}\int f_n.
+\]</span>
+Taking the supremum over all <span class="math inline">\(g\)</span> yields the desired inequality.
+</details>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-5" class="corollary"><strong>Corollary 3.1  </strong></span>Suppose <span class="math inline">\(f\)</span> is a non-negative measurable function, and <span class="math inline">\(\{f_n\}\)</span> a sequence of non-negative measurable functions with <span class="math inline">\(f_n(x) \le f(x)\)</span> and <span class="math inline">\(f_n(x)\to f(x)\)</span> for a.e. <span class="math inline">\(x\)</span>. Then
+<span class="math display">\[
+\lim_{n\to\infty}\int f_n=\int f.
+\]</span></p>
+</div>
+<div class="corollary">
+<p><span id="cor:m" class="corollary"><strong>Corollary 3.2  (Monotone convergence theorem) </strong></span>Suppose <span class="math inline">\(\{f_n\}\)</span> a sequence of non-negative measurable functions with <span class="math inline">\(f_n(x) \nearrow f(x)\)</span>. Then
+<span class="math display">\[
+\lim_{n\to\infty}\int f_n=\int f.
+\]</span></p>
+</div>
+<div class="corollary">
+<p><span id="cor:sm" class="corollary"><strong>Corollary 3.3  </strong></span>Consider a series <span class="math inline">\(\sum_{k=1}^{\infty}a_k(x)\)</span>, where <span class="math inline">\(a_k(x)\ge 0\)</span> is measurable for every <span class="math inline">\(k\ge 1\)</span>. Then
+<span class="math display">\[
+\int \sum_{k=1}^{\infty}a_k(x)\ dx =\sum_{k=1}^{\infty}\int a_k(x)\ dx.
+\]</span></p>
+</div>
+</div>
+<div id="general-form" class="section level3 hasAnchor" number="3.1.5">
+<h3><span class="header-section-number">3.1.5</span> General form<a href="ch2.html#general-form" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In this case, we define the <strong>Lebesgue integral</strong> of <span class="math inline">\(f\)</span> by
+<span class="math display">\[
+\int f =\int f^+-\int f^-.
+\]</span></p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-6" class="proposition"><strong>Proposition 3.4  </strong></span>The integral of Lebesgue integrable functions is linear, additive, monotonic, and satisfies the triangle inequality.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:uc" class="proposition"><strong>Proposition 3.5  </strong></span>Suppose <span class="math inline">\(f\)</span> is integral on <span class="math inline">\(\mathbb{R}^d\)</span>. Then for every <span class="math inline">\(\epsilon&gt;0\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>There exists a set of finite measure <span class="math inline">\(B\)</span> (a ball, for example) such that
+<span class="math display">\[
+\int_{B^c}|f|&lt;\epsilon.
+\]</span></li>
+<li>There is a <span class="math inline">\(\delta&gt;0\)</span> such that
+<span class="math display">\[
+\int_E|f|&lt;\epsilon\quad \text{ whenever }m(E)&lt;\delta.
+\]</span>
+<details>
+<summary>
+<em>Proof.</em>
+</summary>
+Assume that <span class="math inline">\(f\ge 0\)</span>: 1. <span class="math inline">\(B_N=(-N,N)\)</span>; 2. <span class="math inline">\(E_N=\{x:f(x)\le N\}\)</span>.
+</details></li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:dc" class="theorem"><strong>Theorem 3.3  (Dominated convergence theorem) </strong></span></p>
+Suppose <span class="math inline">\(\{f_n\}\)</span> is a sequence of measurable functions such that <span class="math inline">\(f_n\to f\)</span> a.e. <span class="math inline">\(x\)</span> as <span class="math inline">\(n\)</span> tends to infinity. If <span class="math inline">\(f_n(x)\le g(x)\)</span>, where <span class="math inline">\(g\)</span> is integrable, then
+<span class="math display">\[
+\int |f_n-f|\to 0 \quad \text{ as }n\to \infty,
+\]</span>
+and consequently
+<span class="math display">\[
+\int f_n \to \int f.
+\]</span>
+<details>
+<summary>
+<em>Proof.</em>
+</summary>
+For each <span class="math inline">\(N\ge 0\)</span> let <span class="math inline">\(E_N=\{x:|x|\le N, g(x)\le N\}\)</span>.
+<span class="math display">\[
+\begin{aligned}
+\int|f_n-f|&amp;=\int_{E_N}|f_n-f|+\int_{E_N^c}|f_n-f|\\
+&amp;\le \int_{E_N}|f_n-f|+2\int_{E_N^c}g\\
+&amp;\le \epsilon +2\epsilon
+\end{aligned}
+\]</span>
+for all large <span class="math inline">\(n\)</span>. This prove the theorem.
+</details>
+</div>
+</div>
+<div id="complex-valued-functions" class="section level3 hasAnchor" number="3.1.6">
+<h3><span class="header-section-number">3.1.6</span> Complex-valued functions<a href="ch2.html#complex-valued-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The collection of all complex-valued integrable functions on a measurable subset <span class="math inline">\(E\subset \mathbb{R}^d\)</span> forms a vector space over <span class="math inline">\(\mathbb{C}\)</span>.</p>
+</div>
+</div>
+<div id="the-space-l1-of-integrable-functions" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> The space <span class="math inline">\(L^1\)</span> of integrable functions<a href="ch2.html#the-space-l1-of-integrable-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For any integrable function <span class="math inline">\(f\)</span> on <span class="math inline">\(\mathbb{R}^d\)</span> we define the <span class="math inline">\(L^1\)</span>-norm of <span class="math inline">\(f\)</span>,
+<span class="math display">\[
+\|f\|=\|f\|_{L^1}=\|f\|_{L^1(\mathbb{R}^d)}=\int_{\mathbb{R}^d}|f|.
+\]</span></p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-7" class="proposition"><strong>Proposition 3.6  </strong></span>Suppose <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are two functions in <span class="math inline">\(L^1(\mathbb{R}^d)\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\|af\|=|a|\|f\|\)</span> for all <span class="math inline">\(a\in\mathbb{C}\)</span>.</li>
+<li><span class="math inline">\(\|f+g\|\le \|f\|+\|g\|\)</span>.</li>
+<li><span class="math inline">\(\|f\|=0\)</span> iff <span class="math inline">\(f=0\)</span> a.e.</li>
+<li><span class="math inline">\(d(f,g)=\|f-g\|\)</span> defines a metric on <span class="math inline">\(L^1(\mathbb{R}^d)\)</span>.</li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:rf" class="theorem"><strong>Theorem 3.4  (Riesz-Fischer) </strong></span>The vector space <span class="math inline">\(L^1\)</span> is complete in its metric.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-8" class="corollary"><strong>Corollary 3.4  </strong></span>If <span class="math inline">\(\{f_n\}_{n=1}^\infty\)</span> converges to <span class="math inline">\(f\)</span> in <span class="math inline">\(L^1\)</span>, the nthere exists a subsequence <span class="math inline">\(\{f_{n_k}\}_{k=1}^\infty\)</span> such that
+<span class="math display">\[
+f_{n_k}(x)\to f(x)\quad a.e. x.
+\]</span></p>
+</div>
+<p>We say that a family <span class="math inline">\(\cal G\)</span> of integrable functions is <strong>dense</strong> in <span class="math inline">\(L^1\)</span> if for ant <span class="math inline">\(f\in L^1\)</span> and <span class="math inline">\(\epsilon&gt;0\)</span>, there exists <span class="math inline">\(g\in\cal G\)</span> so that <span class="math inline">\(\|f-g\|&lt;\epsilon\)</span>.</p>
+<div class="theorem">
+<p><span id="thm:d" class="theorem"><strong>Theorem 3.5  </strong></span>The following families of functions are dense in <span class="math inline">\(L^1(\mathbb{R}^d)\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>The simple functions.</li>
+<li>The step functions.</li>
+<li>The continuous functions of compact support.</li>
+</ol>
+</div>
+<div id="invariance-properties" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Invariance properties<a href="ch2.html#invariance-properties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="translations-and-continuity" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Translations and continuity<a href="ch2.html#translations-and-continuity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-9" class="proposition"><strong>Proposition 3.7  </strong></span></p>
+Suppose <span class="math inline">\(f\in L^1(\mathbb{R}^d)\)</span>. Then
+<span class="math display">\[
+\|f_h-f\|\to 0\quad \text{ as }h\to 0.
+\]</span>
+<details>
+<summary>
+<em>Proof.</em>
+</summary>
+By Theorem <a href="ch2.html#thm:d">3.5</a>, find a continuous function with compact support to approximate <span class="math inline">\(f\)</span>.
+</details>
+</div>
+</div>
+</div>
+<div id="fubinis-theorem" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Fubini’s theorem<a href="ch2.html#fubinis-theorem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="a-fourier-inversion-formula" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> A Fourier inversion formula<a href="ch2.html#a-fourier-inversion-formula" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="exercise-1" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Exercise<a href="ch2.html#exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="prooblem" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Prooblem<a href="ch2.html#prooblem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>:::</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://https://github.com/Neoneu/real-analysis-by-stein/02-integral.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

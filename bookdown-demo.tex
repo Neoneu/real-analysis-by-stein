@@ -1,0 +1,819 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Real analysis},
+  pdfauthor={Zijie Xia},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Real analysis}
+\author{Zijie Xia}
+\date{2024-08-01}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{conjecture}{Conjecture}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\chapter{Prerequisites}\label{prerequisites}
+
+This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\).
+
+The \textbf{bookdown} package can be installed from CRAN or Github:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{)}
+\CommentTok{\# or the development version}
+\CommentTok{\# devtools::install\_github("rstudio/bookdown")}
+\end{Highlighting}
+\end{Shaded}
+
+Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading \texttt{\#}.
+
+To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.name/tinytex/}.
+
+\chapter{Measure Theory}\label{ch1}
+
+\section{Preliminaries}\label{preliminaries}
+
+The \textbf{open ball} in \(\mathbb{R}^d\) centered at \(x\) and of radius \(r\) is defined by
+\[
+B_r(x)=\{y\in \mathbb{R}^d :|y−x|<r\}.
+\]
+A subset \(E\subset\mathbb{R}^d\) is \textbf{open} if for every \(x\in E\) there exists \(r>0\) with \(B_r(x)\subset E\). By definition, a set is \textbf{closed} if its complement is open.
+
+We note that any (not necessarily countable) union of open sets is open, while in general the intersection of only finitely many open sets is open. A similar statement holds for the class of closed sets, if one interchanges the roles of unions and intersections.
+
+A set \(E\) is \textbf{bounded} if it is contained in some ball of finite radius. A bounded set is \textbf{compact} if it is also closed. Compact sets enjoy the \textbf{Heine-Borel covering property}:
+
+\begin{itemize}
+\tightlist
+\item
+  Assume \(E\) is compact, \(E\subset \bigcup_{\alpha}\cal{O}_{\alpha}\), and each \(\cal{O}_{\alpha}\) is open. Then there are finitely many of the open sets, \(\cal{O}_{\alpha_1},{O}_{\alpha_2},\dots,{O}_{\alpha_N}\), such that \(E\subset \bigcup_{j=1}^n\cal{O}_{\alpha_j}\).
+\end{itemize}
+
+In words, any covering of a compact set by a collection of open sets contains a finite subcovering.
+
+A point \(x\in \mathbb{R}^d\) is a \textbf{limit point} of the set \(E\) if for every \(r>0\),the ball \(B_r(x)\) contains points of \(E\). This means that there are points in \(E\) which are arbitrarily close to \(x\). An \textbf{isolated point} of \(E\) is a point \(x\in E\) such that there exists an \(r > 0\) where \(B_r(x)\cap E\) is equal to \(\{x\}\).
+
+A point \(x\in E\) is an \textbf{interior point} of \(E\) if there exists \(r>0\) such that \(B_r(x)\subset E\). The set of all interior points of E is called the \textbf{interior} of \(E\). Also, the \textbf{closure} \(\overline{E}\) of the \(E\) consists of the union of \(E\) and all its \emph{limit points}. The \textbf{boundary} of a set \(E\), denoted by \(\partial E\), is the set of points which are in the closure of \(E\) but not in the interior of \(E\).
+
+Note that the closure of a set is a closed set; every point in \(E\) is a limit point of \(E\); and a set is closed if and only if it contains all its limit points. Finally, a closed set \(E\) is \textbf{perfect} if \(E\) does not have any isolated points.
+
+\begin{lemma}
+If a rectangle is the almost disjoint union of finitely many other rectangles, say \(R=\bigcup_{k=1}^NR_k\), then
+\[
+|R|=\sum_{k=1}^N |R_k|
+\]
+\end{lemma}
+
+\begin{lemma}
+If \(R,R_1,\dots,R_N\) are rectangles, and \(R\subset\bigcup_{k=1}^NR_k\), then
+\[
+|R|\leq\sum_{k=1}^N |R_k|
+\]
+\end{lemma}
+
+\emph{Proof.}
+
+Every open subset \(\cal{O}\) of \(\mathbb{R}\) can be written uniquely as a countable union of disjoint open intervals.
+
+Every open subset \(\cal{O}\) of \(\mathbb{R}^d\), \(d\geq 1\), can be written uniquely as a countable union of almost disjoint closed cubes.
+
+The \textbf{Cantor set} \(\cal{C}\) is by definition the intersection of all \(C_k\)'s:
+\[
+\mathcal{C}=\bigcap_{k=0}^{\infty}C_k.
+\]
+
+The set \(\cal{C}\) is not empty, since all end-points of the intervals in \(C_k\) (all \(k\)) belong to \(\cal{C}\).
+Despite its simple construction, the Cantor set enjoys many interesting topological and analytical properties. For instance, \(\cal{C}\) is closed and bounded, hence compact. Also, \(\cal{C}\) is totally disconnected: given any \(x,y\in \cal{C}\) there exists \(z\not\in \cal{C}\) that lies between \(x\) and \(y\). Finally, \(\cal{C}\) is perfect: it has no isolated points.
+
+In terms of cardinality the Cantor set is rather large: it is not countable. Since it can be mapped to the interval \([0,1]\), the Cantor set has the cardinality of the continuum. However, from the point view of ``length'' the size f \(\cal C\) is small. Roughly speaking, it has length zero.
+
+\section{The exterior measure}\label{the-exterior-measure}
+
+\begin{definition}
+If \(E\) is any subset of \(\mathbb{R}^d\), the \textbf{exterior measure} of \(E\) is
+\[
+m_{\ast}(E) = \inf\sum_{j=1}^{\infty}|Q_j|,
+\]
+where the infimum is taken over all countable coverings \(E\subset \bigcup_{j=1}^{\infty}Q_j\) by closed cubes. In general we have \(0\leq m_{\ast}(E)\leq \infty\).
+\end{definition}
+
+\begin{itemize}
+\tightlist
+\item
+  It would not suffice to allow finite sums in the definition of \(m_{\ast}(E)\). The quantity that would be obtained if one considered only coverings of \(E\) by finite unions of cubes is in general larger than \(m_{\ast}(E)\).
+\item
+  One can, however, replace the coverings by cubes, with coverings by rectangles; or with coverings by balls.
+\end{itemize}
+
+\begin{example}
+The exterior measure of a closed cube is equal to its volume.
+\end{example}
+
+\emph{Proof.}
+
+We consider an arbitrary covering \(Q\subset \bigcup_{j=1}^{\infty}Q_j\) by cubes, where \(Q_j\) is closed for \(j=1,2,\dots\). Then it suffices to prove that
+\[
+  |Q|\leq \sum_{j=1}^{\infty}|Q_j|.
+  \]
+
+\begin{example}
+The exterior measure of a open cube is equal to its volume.
+\end{example}
+
+\begin{example}
+The exterior measure of a rectangle is equal to its volume.
+\end{example}
+
+\emph{Proof.}
+
+Arguing as in the first example, we see that \(|R|\leq m_{\ast}(R)\). To obtain the reverse inequality, consider a grid in \(\mathbb{R}^d\) formed by cubes of side length \(1/k\), then let \(k\) tend to infinity yields \(m_{\ast}(R)\leq |R|\).
+
+\begin{example}
+The Cantor set \(\cal C\) has exterior measure 0.
+\end{example}
+
+\subsection{Properties of the exterior measure}\label{properties-of-the-exterior-measure}
+
+From the definition we know that:
+- For every \(\epsilon>0\), there exists a covering \(E\subset \bigcup_{j=1}^{\infty}Q_j\) with
+\[
+\sum_{j=1}^{\infty}m_{\ast}(Q_j)\leq m_{\ast}(E)+\epsilon.
+\]
+
+\begin{proposition}
+\protect\hypertarget{prp:pem}{}\label{prp:pem}\leavevmode
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  (Monotonicity) If \(E_1\subset E_2\), then \(m_{\ast}(E_1)\leq m_{\ast}(E_2)\).
+\item
+  (Countatble sub-additivity) If \(E= \bigcup_{j=1}^{\infty}E_j\), then \(m_{\ast}(E)\leq\sum_{j=1}^{\infty}m_{\ast}(E_j)\).
+\item
+  If \(E\subset\mathbb{R}^d\), then \(m_{\ast}(E)=\inf m_{\ast}(\cal O)\), where the infimum is taken over all open sets \(\cal O\) containing \(E\).
+
+  \emph{Proof.}
+
+  It suffices to prove that \(m_{\ast}(E)\geq \inf m_{\ast}(\cal O)\). Notice that for any closed cube \(Q_j\), there exists an open set \(S_j\) which contains \(Q_j\) and such that \(|S_j|\leq (1+\epsilon)|Q_j|\) for a fixed \(\epsilon>0\).
+\item
+  If \(E=E_1\cup E_2\),and \(d(E_1,E_2)>0\), then
+  \[
+   m_{\ast}(E)=  m_{\ast}(E_1)+  m_{\ast}(E_2).
+  \]
+\item
+  If a set \(E\) is the countable union of almost disjoint cubes \(E=\bigcup_{j=1}^{\infty}Q_j\), then
+  \[
+  m_{\ast}(E) = \sum_{j=1}^{\infty}|Q_j|.
+  \]
+
+  \emph{Proof.}
+
+  Consider constructing a family of cubes that are at a finite distance from one another, so we can use proposition 4.
+\end{enumerate}
+
+\end{proposition}
+
+\section{Measurable sets and the Lebesgue measure}\label{measurable-sets-and-the-lebesgue-measure}
+
+The notion of measurability isolates a collection of subsets in \(\mathbb{R}^d\) for which the exterior measure satisfies all our desired properties, including additivity (and in fact countable additivity) for disjoint unions of sets.
+
+There are a number of different ways of defining measurability, but these all turn out to be equivalent. Probably the simplest and most intuitive is the following: A subset \(E\) of \(\mathbb{R}^d\) is \textbf{Lebesgue measurable}, or simply \textbf{measurable}, if for any \(\epsilon > 0\) there exists an open set \(\cal O\) with \(E\subset\cal O\) and
+\[
+m_{\ast}(\mathcal{O}-E) ≤ \epsilon.
+\]
+This should be compared to Proposition \ref{prp:pem} 3, which holds for all sets \(E\). If E is measurable, we define its \textbf{Lebesgue measure} (or \textbf{measure}) \(m(E)\) by
+\[
+m(E)=m_{\ast}(E).
+\]
+
+Immediately from the definition, we find:
+
+\begin{proposition}
+\leavevmode
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Every open set in \(\mathbb{R}^d\) is measurable.
+\item
+  If \(m_{\ast}(E)=0\), then \(E\) is measurable. In particular, if \(F\) is a subset of a set of exterior measure \(0\), then \(F\) is measurable.
+\item
+  A countable union of measurable sets is measurable.
+\item
+  Closed sets are measurable.
+
+  \emph{Proof.}
+
+  Since any closed set \(F\) can be written as the union of compact sets, say \(F=\bigcup_{k=1}^{\infty}F\cap B_k\), where \(B_k\) denotes the closed ball of radius \(k\) centered at the origin, it suffices to prove that compact sets are measurable.
+\item
+  The complement of a measurable set is measurable.
+
+  \emph{Proof.}
+
+  For every positive integer \(n\) we choose an open set \(\cal O_n\) with \(E\subset \cal O_n\) and \(m_{\ast}(\mathcal{O_n}-E)\leq 1/n\). Notice that
+  \[
+    (E^c-\bigcup_{n=1}^{\infty}\mathcal{O_n^c}) \subset(\mathcal{O_n}-E)
+    \]
+  then \(E^c\) is measurable since \(E^c=(E^c-\bigcup_{n=1}^{\infty}\mathcal{O_n^c})\cup \bigcup_{n=1}^{\infty}\mathcal{O_n^c}\).
+\item
+  A countable intersection of measurable sets is measurable.
+\end{enumerate}
+
+\end{proposition}
+
+To prove the fourth proposition, we need the following lemma.
+
+\begin{lemma}
+If \(F\) is closed, \(K\) is compact, and these sets are disjoint, then \(d(F,K)>0\).
+\end{lemma}
+
+\begin{theorem}
+If \(E_1,E_2,\dots\), are disjoint measurable sets, and \(E=\bigcup_{j=1}^{\infty}E_j\), then
+\[
+m(E)=\sum_{j=1}^{\infty}m(E_j).
+\]
+\end{theorem}
+
+\emph{Proof.}
+
+If \(F_1,F_2,\dots, F_N\), are compact and disjoint, then obviously for any \(j,k,j\ne k\), \(d(F_j,F_k)>0\), so \(m\left(\bigcup_{j=1}^NF_j\right)=\sum_{j=1}^Nm(F_j)\). If each \(E_j\) is bounded, we can choose a closed subset \(F_j\) for \(E_j\) with \(m_{\ast}(E_j-F_j)\leq \epsilon/2^j\) for each \(j\). Then
+\[
+  m(E) \geq \sum_{j=1}^Nm(F_j) \ge \sum_{j=1}^Nm(E_j)-\epsilon
+  \]
+Letting \(N\) tend to infinity, since \(\epsilon\) is arbitrary we find that
+\[
+  m(E)\ge\sum_{j=1}^{\infty}m(E_j).
+  \]
+In the general case, we select any sequence of cubes \(\{Q_k\}_{k=1}^{\infty}\) that increases to \(\mathbb{R}^d\), in the sense that \(Q_k\subset Q_{k+1}\) for all \(k\ge 1\) and \(\bigcup_{k=1}^{\infty}Q_k=\mathbb{R}^d\). We then let \(S_1=Q_1\) and \(S_k=Q_k-Q_{k-1}\) for \(k\ge 2\). If we define measurable sets by \(E_{j,k}=E_j\cap S_k\), then
+\[
+  m(E) =\sum_{j,k}m(E_{j,k})=\sum_j\sum_km(E_{j,k})=\sum_jm(E_j).
+  \]
+
+\begin{corollary}
+
+Suppose \(E_1,E_2,...\) are measurable subsets of \(\mathbb{R}^d\).
+
+\begin{itemize}
+\tightlist
+\item
+  If \(E_k \nearrow E\), then \(m(E) =\lim_{N\to \infty}m(E_N)\).
+\item
+  If \(E_k \searrow E\) and \(m(E_k)<\infty\) for some \(k\), then \(m(E) =\lim_{N\to \infty}m(E_N)\).
+\end{itemize}
+
+\end{corollary}
+
+\begin{theorem}
+\protect\hypertarget{thm:m}{}\label{thm:m}
+
+Suppose \(E\) is measurable subset of \(\mathbb{R}^d\). Then for every \(\epsilon>0\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  There exists an open set \(\cal O\) with \(E\subset \cal O\) and \(m(\mathcal{O}-E)\leq\epsilon\).
+\item
+  There exists a closed set \(F\) with \(F\subset E\) and \(m(E-F)\leq\epsilon\).
+\item
+  If \(m(E)\) is finite, there exists a compact set \(K\) with \(K\subset E\) and \(m(E-K)\leq \epsilon\).
+\item
+  If \(m(E)\) is finite, there exists a finite union \(F=\bigcup_{j=1}^NQ_j\) of closed cubes such that
+  \[
+  m(E\triangle F)\leq \epsilon.
+  \]
+
+  \emph{Proof.}
+
+  Choose a family of closed cubes \(\{Q_j\}_{j=1}^{\infty}\) so that
+  \[
+    E\subset \bigcup_{j=1}^{\infty}Q_j \text{ and } \sum_{j=1}^{\infty}|Q_j|\le m(E) +\epsilon/2.
+    \]
+  Since \(m(E) <\infty\), then series converges and there exists \(N>0\) such that \(\sum_{j=n+1}^{\infty}|Q_j|\le \epsilon/2\). If \(F=\bigcup_{j=1}^NQ_j\), then
+  \[
+   \begin{aligned}
+   m(E\triangle F) &= m(E-F)+m(F-E)\\
+   &\le m\left( \bigcup_{j=1}^{\infty}Q_j - F\right)+m\left( \bigcup_{j=1}^{\infty}Q_j-E\right)\\
+   &\le m\left( \bigcup_{j=n+1}^{\infty}Q_j\right)+ m\left( \bigcup_{j=n+1}^{\infty}Q_j\right)-m(E)\\
+   &\le \sum_{j=n+1}^{\infty}|Q_j|+\sum_{j=1}^{\infty}|Q_j|-m(E)\\
+   &\le \epsilon.
+   \end{aligned}
+   \]
+\end{enumerate}
+
+\end{theorem}
+
+\subsection{Invariance properties of Lebesgue measure}\label{invariance-properties-of-lebesgue-measure}
+
+\subsection{\texorpdfstring{\(\sigma\)-algebra and Borel sets}{\textbackslash sigma-algebra and Borel sets}}\label{sigma-algebra-and-borel-sets}
+
+\textbf{Borel \(\sigma\)-algebra} in \(\mathbb{R}^d\), denoted by \(\cal B_{\mathbb{R}^d}\), is the smallest \(\sigma\)-algebra in \(\mathbb{R}^d\) that contains all open sets. Elements of this \(\sigma\)-algebra are called \textbf{Borel sets}. Since we observe that any intersection (not necessarily countable) of \(\sigma\)-algebra is again a \(\sigma\)-algebra, we may define \(\cal B_{\mathbb{R}^d}\) as the intersection of all \(\sigma\)-algebras that contain the open sets. This shows the existence and uniqueness of the Borel \(\sigma\)-algebra.
+
+\begin{remark}
+There exists Lebesgue measurable sets that are not Borel sets. (See Exercise @ref(exr: \#35)
+\end{remark}
+
+\subsection{Construction of a non-measurable set}\label{construction-of-a-non-measurable-set}
+
+\subsection{Axiom of choice}\label{axiom-of-choice}
+
+\section{Measurable functions}\label{measurable-functions}
+
+\subsection{Definition and basic properties}\label{definition-and-basic-properties}
+
+The starting point is the notion of a \textbf{characteristic function} of a set E, which is defined by
+\[
+\chi_E(x)=
+\begin{cases}
+1& \text{if }x\in E,\\
+0& \text{if }x\not\in E.
+\end{cases}
+\]
+For the Riemann integral it is in effect theclass of \textbf{step functions} that build the blocks of integration theory , with each give as a finite sum
+
+\[
+f = \sum_{k=1}^Na_k\chi_{R_k}
+\]
+where each \(R_k\) is a rectangle, and the \(a_k\) are constants.
+
+For the lebesgue integral we need a more general notion. A \textbf{simple function} is a finite sum
+\[
+f = \sum_{k=1}^Na_k\chi_{E_k}
+\]
+where each \(E_k\) is a measurable set of finite measure, and the \(a_k\) are constants.
+
+A function \(f\) defined on a measurable subset \(E\) of \(\mathbb{R}^d\) is \textbf{measurable}, if for all \(a\in\mathbb{R}\), the set
+\[
+f^{-1}([-\infty,a))=\{x\in E: f(x)<a\}
+\]
+is measurable. Note that this definition applies to extended-valued functions, so we use \(f^{-1}([-\infty,a))\) instead of \(f^{-1}((-\infty,a))\).
+
+\begin{proposition}
+\leavevmode
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The finite-valued function \(f\) is measurable iff \(f^{-1}(\cal O)\) is measurable for every open set \(\cal O\), and iff \(f^{-1}(F)\) is measurable for every closed set \(F\). (Note that this property also applies to extended-valued functions, if we make the additional hypothesis that both \(f^{-1}(\infty)\) and \(f^{-1}(-\infty)\) are measurable sets since \([-\infty,a)=\{-\infty\}\cup\left(\bigcup_{n=1}^{\infty}(-n,a)\right)\).)
+\item
+  If \(f\) is continuous on \(\mathbb{R}^d\), then \(f\) is measurable. If \(f\) is measurable and finite-valued, and \(\Phi\) is continuous, then \(\Phi\circ f\) is measurable. (Note that it is not true that \(f\circ\Phi\) is measurable. See exercise 35.)
+
+  \emph{Proof.}
+
+  \(\Phi\) is continuous, so \(\Phi^{-1}((-\infty,a))\) is open set \(\cal O\).
+\item
+  Suppose \(\{f_n\}_{n=1}^{\infty}\) is a sequence of measurable functions. Then
+  \[
+  \sup_nf_n(x),\quad \inf_nf_n(x),\quad\limsup_{n\to\infty}f_n(x)\quad \text{and} \quad\liminf_{n\to\infty}f_n(x)
+  \]
+  are measurable.
+\item
+  If \(\{f_n\}_{n=1}^{\infty}\) is a collection of measurable functions, and
+  \[
+  \lim_{n\to\infty}f_n(x)=f(x),
+  \]
+  then \(f\) is measurable.
+\item
+  If \(f\) and \(g\) are measurable, then
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  The integer powers \(f^k\), \(k\ge 1\) are measurable.
+\item
+  \(f+g\) and \(fg\) are measurable if both \(f\) and \(g\) are finite-valued.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Suppose \(f\) is measurable, and \(f(x)=g(x)\) for a.e. \(x\). Then \(g\) is measurable.
+\end{enumerate}
+
+\end{proposition}
+
+\subsection{Approximation by simple functions or step functions}\label{approximation-by-simple-functions-or-step-functions}
+
+\begin{theorem}
+\leavevmode
+
+Suppose \(f\) is a non-negative measurable function on \(\mathbb{R}^d\). Then there exists an increasing sequence of non-negative simple functions \(\{\varphi_n\}_{n=1}^{\infty}\) that converges pointwise to \(f\), namely,
+\[
+\varphi_k(x)\le\varphi_{k+1}(x) \text{ and } \lim_{k\to \infty}\varphi_k(x)=f(x),\ \text{for all }x.
+\]
+
+\emph{Proof.}
+
+\(\Phi\) is continuous, so \(\Phi^{-1}((-\infty,a))\) is open set \(\cal O\).
+
+\end{theorem}
+
+\begin{theorem}
+\protect\hypertarget{thm:s}{}\label{thm:s}\leavevmode
+
+Suppose \(f\) is a measurable function on \(\mathbb{R}^d\). Then there exists a sequence of simple functions \(\{\varphi_n\}_{n=1}^{\infty}\) that satisfies
+\[
+|\varphi_k(x)|\le|\varphi_{k+1}(x)| \text{ and } \lim_{k\to \infty}\varphi_k(x)=f(x),\ \text{for all }x.
+\]
+
+\emph{Proof.}
+
+We use the decomposition of \(f\): \(f(x)=f^{+}(x)-f^{-}(x)\).
+
+\end{theorem}
+
+\begin{theorem}
+\leavevmode
+
+Suppose \(f\) is measurable on \(\mathbb{R}^d\). Then there exists an sequence of step functions \(\{\psi_n\}_{n=1}^{\infty}\) that converges pointwise to \(f(x)\) for almost every \(x\),
+\[
+\varphi_k(x)\le\varphi_{k+1}(x) \text{ and } \lim_{k\to \infty}\varphi_k(x)=f(x),\ \text{for all }x.
+\]
+
+\emph{Proof.}
+
+By Theorem \ref{thm:s}, it suffices to show that if \(E\) is a measurable set with finite measure, then \(f=\chi_E\) can be approximated by step functions. This can be proven by split \(E\) into cubes and then rectangles with Theorem \ref{thm:m}.
+
+\end{theorem}
+
+\subsection{Littlewood's three principles}\label{littlewoods-three-principles}
+
+\begin{theorem}[Egorov]
+\protect\hypertarget{thm:egorov}{}\label{thm:egorov}Suppose \(\{f_k\}_{k=1}^{\infty}\) is a sequence of measurable functions defined on a measurable set \(E\) with \(m(E)<\infty\), and assume that \(f_k\to f\) a.e. on \(E\) and \(f_1,f_2,\dots,f_k,f\) are finite valued a.e. on \(E\). Given \(\epsilon>0\), we can find a closed set \(A_{\epsilon}\subset E\) such that \(m(E-A_{\epsilon})\le \epsilon\) and \(f_k\to f\) uniformly on \(A_{\epsilon}\).
+\end{theorem}
+
+\begin{remark}
+Note that \(f_1,f_2,\dots,f_k,f\) are finite valued a.e. on \(E\). Indeed, if it is not satisfied, then we cannot construct \(\{E_k^n\}_{k=1}^\infty\) such that \(E_k^n\nearrow E\). A counterexample is that
+\[
+f_k(x)=\begin{cases}
+k&|x|\le k,\\
+\infty &|x|>k
+\end{cases}
+\]
+and \(f(x)=\infty\) on \(\mathbb{R}\).
+\end{remark}
+
+\begin{remark}
+Note that \(m(E)<\infty\) and it is easy to construct counterexamples when \(m(E)=\infty\). Indeed, if \(m(E)=\infty\), then we cannot find \(k_n\) such that \(m(E-E_{k_n}^n)<1/2^n\) since \(m(E-E_{k_n}^n)=m(E)-m(E_{k_n}^n)\).
+\end{remark}
+
+\begin{theorem}[Lusin]
+\protect\hypertarget{thm:lusin}{}\label{thm:lusin}Suppose \(f\) is measurable and finite valued a.e. on \(E\) with \(E\) of finite measure. Then for every \(\epsilon>0\) there exists a closed set \(F_{\epsilon}\), with
+\[
+F_{\epsilon}\subset E, \text{ and }m(E-F_{\epsilon})\le \epsilon
+\]
+and such that \(f|_{F_{\epsilon}}\) is continuous.
+\end{theorem}
+
+\section{The Brunn-Minkowski inequality}\label{the-brunn-minkowski-inequality}
+
+\begin{remark}
+\leavevmode
+
+Let \(a,b\ge0\), then
+\[
+\begin{aligned}
+(a+b)^\gamma&\ge a^\gamma+b^\gamma\text{ if }\gamma\ge 1,\\
+(a+b)^\gamma&\le a^\gamma+b^\gamma\text{ if }0<\gamma< 1
+\end{aligned}
+\]
+
+\emph{Proof.}
+
+Let \(f(\gamma)=(1+x)^\gamma-(1+x^\gamma)\), where \(x> 0\). Then
+\[
+\begin{aligned}
+f^\prime (\gamma)&=(1+x)^\gamma\ln(1+x)-x^\gamma\ln x\\
+&=[(1+x)^\gamma-x^\gamma]\ln(1+x)+x^\gamma\ln(1+1/x)>0,
+\end{aligned}
+\]
+notice that \(f(1)=0\), so when \(\gamma\ge 1\), \((1+x)^\gamma\ge(1+x^\gamma)\) and when \(0<\gamma< 1\), \((1+x)^\gamma<(1+x^\gamma)\). With this result, the original inequality is obvious.
+
+\end{remark}
+
+\ref{exr:19}
+
+\begin{theorem}
+Suppose \(A\) and \(B\) are measurable sets in \(\mathbb{R}^d\) and their sum \(A+B\) is also measurable. Then
+\[
+m(A+B)^{1/d}\ge m(A)^{1/d}+m(B)^{1/d}.
+\]
+\end{theorem}
+
+\section{Exercise}\label{exercise}
+
+\section{Problem}\label{problem}
+
+\chapter{Integration theory}\label{ch2}
+
+\section{The lebesgue integral: basic properties and convergence theorems}\label{the-lebesgue-integral-basic-properties-and-convergence-theorems}
+
+\subsection{Stage one: simple functions}\label{stage-one-simple-functions}
+
+\begin{proposition}
+
+The integral of simpe functions defined bve satifies the following properties:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Independence of the representation. If \(\varphi=\sum_{k=1}^Na_k\chi_{E_k}\) is any representation of \(\varphi\), then
+  \[
+  \int \varphi=\sum_{k=1}^Na_km(E_k).
+  \]
+\item
+  Linearity.
+\item
+  Additivity.
+\item
+  Monotonicity.
+\item
+  Triangle inequality. If \(\varphi\) is a simple function, then so is \(|\varphi|\), and
+  \[
+  \left|\int\varphi\right|\le \int|\varphi|.
+  \]
+\end{enumerate}
+
+\end{proposition}
+
+\subsection{Stage two: bounded functions supported on a set of finite measure}\label{stage-two-bounded-functions-supported-on-a-set-of-finite-measure}
+
+\begin{lemma}
+\protect\hypertarget{lem:l}{}\label{lem:l}
+
+Let \(f\) be a bounded function supported on a set \(E\) of finite measure. If \(\{\varphi_n\}_{n=1}^\infty\) is any sequence of simple functions bounded by \(M\), supported on \(E\), and with \(\varphi_n(x)\to f(x)\) for a.e. \(x\), then:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The limit \(\lim_{n\to\infty}\int\varphi_n\) exists.
+\item
+  If \(f=0\) a.e., then the limit \(\lim_{n\to\infty}\int\varphi_n\) equals 0.
+\end{enumerate}
+
+\end{lemma}
+
+\emph{Proof.}
+
+Setting \(I_n=\int\varphi_n\) and applying Egorov's theorem which is proven in Chapter \ref{ch1} we have that for and large \(n\) and \(m\)
+\[
+\begin{aligned}
+|I_n-I_m| &\le \int_E|\varphi_n-\varphi_m|\\
+&=\int_{A_\epsilon}|\varphi_n-\varphi_m|+\int_{E-A_\epsilon}|\varphi_n-\varphi_m|\\
+&\le \int_{A_\epsilon}\epsilon\ dx+\int_{E-A_\epsilon}2M\ dx\\
+&\le m(E)\epsilon+2M\epsilon.
+\end{aligned}
+\]
+given any \(\epsilon>0\).
+This proves that \(\{I_n\}\) os a Cauchy sequence nd hence converges. If \(f=0\), letting \(m\) tend to infinity we have \(|I_n-f|=|I_n|\le m(E)\epsilon+2M\epsilon\), which yields \(\lim_{n\to\infty}I_n=0\).
+
+For a bounded function \(f\) that is supported on sets of finite measure, we define its \textbf{Lebesgue integral} by
+\[
+\int f=\lim_{n\to\infty}\int\varphi_n.
+\]
+where \(\{\varphi_n\}\) is any sequence of simple functions satisfying: \(|\varphi_n|\le M\), each \(\varphi_n\) is supported on the support of \(f\), and \(\varphi_n(x)\to f(x)\) for a.e. \(x\) as \(n\) tends to infinity.
+
+Next, we must show that \(\int f\) is independent of the limiting sequence \(\{\varphi_n\}\) used, in order for the integral to be well-defined. Suppose that \(\{\psi_n\}\) is another sequence of simple functions that satisfies the properties above. Then, if \(\eta_n = \varphi_n- \psi_n\), the sequence \(\{\eta_n\}\) consists of simple functions bounded by \(2M\), supported on a set of finite measure, and such that \(\eta_n\to 0\) a.e. as \(n\) tends to infinity. Applying the lemma we find
+\[
+\lim_{n\to\infty}\int \varphi_n =\lim_{n\to\infty}\int \psi_n+\lim_{n\to\infty}\int \eta_n=\lim_{n\to\infty}\int \psi_n
+\]
+as desired.
+
+\begin{proposition}
+
+Suppose \(f\) and \(g\) are bounded functions supported on sets of finite measure. Then the following properties hold.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Linearity
+\item
+  Additivity
+\item
+  Monotonicity
+\item
+  Triangle inequality
+\end{enumerate}
+
+\end{proposition}
+
+\begin{theorem}[Bounded convergence theorem]
+\protect\hypertarget{thm:b}{}\label{thm:b}\leavevmode
+
+Suppose that \(\{f_n\}\) is a sequence of measurable functions that are all bounded by \(M\), are supported on a set \(E\) of finite measure, and \(f_n(x)\to f(x)\) a.e. \(x\) as \(n\to\infty\). Then \(f\)is measurable, bounded ,supported on \(E\) for a.e. \(x\), and
+\[
+\int|f_n-f|\to 0 \text{ as } n\to\infty.
+\]
+Consequently,
+\[
+\int f_n\to \int f  \text{ as } n\to\infty.
+\]
+
+\emph{Proof.}
+
+The proof is a reprise of the argument in Lemma \ref{lem:l}. Fiven \(\epsilon>0\), we may find, by Egorov' theorem,
+\[
+\begin{aligned}
+\int|f_n-f| &\le \int_{A_\epsilon}|f_n-f|+\int_{E-A_\epsilon}|f_n-f|\\
+&\le m(E)\epsilon+2M\epsilon.
+\end{aligned}
+\]
+for all large \(n\).
+
+\end{theorem}
+
+\subsection{Return to Riemann integrable functions}\label{return-to-riemann-integrable-functions}
+
+\subsection{Stage three: non-negative functions}\label{stage-three-non-negative-functions}
+
+\subsection{General form}\label{general-form}
+
+\chapter{Methods}\label{methods}
+
+We describe our methods in this chapter.
+
+Math can be added in body using usual syntax like this
+
+\section{math example}\label{math-example}
+
+\(p\) is unknown but expected to be around 1/3. Standard error will be approximated
+
+\[
+SE = \sqrt{\frac{p(1-p)}{n}} \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
+\]
+
+You can also use math in footnotes like this\footnote{where we mention \(p = \frac{a}{b}\)}.
+
+We will approximate standard error to 0.027\footnote{\(p\) is unknown but expected to be around 1/3. Standard error will be approximated
+
+  \[
+  SE = \sqrt{\frac{p(1-p)}{n}} \approx \sqrt{\frac{1/3 (1 - 1/3)} {300}} = 0.027
+  \]}
+
+\chapter{Applications}\label{applications}
+
+Some \emph{significant} applications are demonstrated in this chapter.
+
+\section{Example one}\label{example-one}
+
+\section{Example two}\label{example-two}
+
+\chapter{Final Words}\label{final-words}
+
+We have finished a nice book.
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}
