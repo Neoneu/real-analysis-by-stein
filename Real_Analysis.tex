@@ -81,12 +81,12 @@
 \urlstyle{same}
 \hypersetup{
   pdftitle={Real analysis},
-  pdfauthor={Zijie Xia},
+  pdfauthor={Neoneu},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
 \title{Real analysis}
-\author{Zijie Xia}
+\author{Neoneu}
 \date{2024-08-01}
 
 \usepackage{amsthm}
@@ -203,7 +203,7 @@ The exterior measure of a closed cube is equal to its volume.
 We consider an arbitrary covering \(Q\subset \bigcup_{j=1}^{\infty}Q_j\) by cubes, where \(Q_j\) is closed for \(j=1,2,\dots\). Then it suffices to prove that
 \[
   |Q|\leq \sum_{j=1}^{\infty}|Q_j|.
-  \]
+\]
 
 \begin{example}
 The exterior measure of a open cube is equal to its volume.
@@ -304,7 +304,7 @@ Immediately from the definition, we find:
   For every positive integer \(n\) we choose an open set \(\cal O_n\) with \(E\subset \cal O_n\) and \(m_{\ast}(\mathcal{O_n}-E)\leq 1/n\). Notice that
   \[
     (E^c-\bigcup_{n=1}^{\infty}\mathcal{O_n^c}) \subset(\mathcal{O_n}-E)
-    \]
+  \]
   then \(E^c\) is measurable since \(E^c=(E^c-\bigcup_{n=1}^{\infty}\mathcal{O_n^c})\cup \bigcup_{n=1}^{\infty}\mathcal{O_n^c}\).
 \item
   A countable intersection of measurable sets is measurable.
@@ -330,15 +330,15 @@ m(E)=\sum_{j=1}^{\infty}m(E_j).
 If \(F_1,F_2,\dots, F_N\), are compact and disjoint, then obviously for any \(j,k,j\ne k\), \(d(F_j,F_k)>0\), so \(m\left(\bigcup_{j=1}^NF_j\right)=\sum_{j=1}^Nm(F_j)\). If each \(E_j\) is bounded, we can choose a closed subset \(F_j\) for \(E_j\) with \(m_{\ast}(E_j-F_j)\leq \epsilon/2^j\) for each \(j\). Then
 \[
   m(E) \geq \sum_{j=1}^Nm(F_j) \ge \sum_{j=1}^Nm(E_j)-\epsilon
-  \]
+\]
 Letting \(N\) tend to infinity, since \(\epsilon\) is arbitrary we find that
 \[
   m(E)\ge\sum_{j=1}^{\infty}m(E_j).
-  \]
+\]
 In the general case, we select any sequence of cubes \(\{Q_k\}_{k=1}^{\infty}\) that increases to \(\mathbb{R}^d\), in the sense that \(Q_k\subset Q_{k+1}\) for all \(k\ge 1\) and \(\bigcup_{k=1}^{\infty}Q_k=\mathbb{R}^d\). We then let \(S_1=Q_1\) and \(S_k=Q_k-Q_{k-1}\) for \(k\ge 2\). If we define measurable sets by \(E_{j,k}=E_j\cap S_k\), then
 \[
   m(E) =\sum_{j,k}m(E_{j,k})=\sum_j\sum_km(E_{j,k})=\sum_jm(E_j).
-  \]
+\]
 
 \begin{corollary}
 
@@ -379,7 +379,7 @@ Suppose \(E\) is measurable subset of \(\mathbb{R}^d\). Then for every \(\epsilo
   Choose a family of closed cubes \(\{Q_j\}_{j=1}^{\infty}\) so that
   \[
     E\subset \bigcup_{j=1}^{\infty}Q_j \text{ and } \sum_{j=1}^{\infty}|Q_j|\le m(E) +\epsilon/2.
-    \]
+  \]
   Since \(m(E) <\infty\), then series converges and there exists \(N>0\) such that \(\sum_{j=n+1}^{\infty}|Q_j|\le \epsilon/2\). If \(F=\bigcup_{j=1}^NQ_j\), then
   \[
    \begin{aligned}
@@ -389,7 +389,7 @@ Suppose \(E\) is measurable subset of \(\mathbb{R}^d\). Then for every \(\epsilo
    &\le \sum_{j=n+1}^{\infty}|Q_j|+\sum_{j=1}^{\infty}|Q_j|-m(E)\\
    &\le \epsilon.
    \end{aligned}
-   \]
+  \]
 \end{enumerate}
 
 \end{theorem}
@@ -401,7 +401,7 @@ Suppose \(E\) is measurable subset of \(\mathbb{R}^d\). Then for every \(\epsilo
 \textbf{Borel \(\sigma\)-algebra} in \(\mathbb{R}^d\), denoted by \(\cal B_{\mathbb{R}^d}\), is the smallest \(\sigma\)-algebra in \(\mathbb{R}^d\) that contains all open sets. Elements of this \(\sigma\)-algebra are called \textbf{Borel sets}. Since we observe that any intersection (not necessarily countable) of \(\sigma\)-algebra is again a \(\sigma\)-algebra, we may define \(\cal B_{\mathbb{R}^d}\) as the intersection of all \(\sigma\)-algebras that contain the open sets. This shows the existence and uniqueness of the Borel \(\sigma\)-algebra.
 
 \begin{remark}
-There exists Lebesgue measurable sets that are not Borel sets. (See Exercise @ref(exr: \#35)
+There exists Lebesgue measurable sets that are not Borel sets. (See Exercise ???ref(exr: \#35)
 \end{remark}
 
 \subsection{Construction of a non-measurable set}\label{construction-of-a-non-measurable-set}
@@ -587,7 +587,7 @@ notice that \(f(1)=0\), so when \(\gamma\ge 1\), \((1+x)^\gamma\ge(1+x^\gamma)\)
 
 \end{remark}
 
-\ref{exr:19}
+???ref(exr:19)
 
 \begin{theorem}
 Suppose \(A\) and \(B\) are measurable sets in \(\mathbb{R}^d\) and their sum \(A+B\) is also measurable. Then
@@ -743,7 +743,11 @@ and
 \]
 Notice that
 \[
-\int_{[a,b]}^\mathcal{R}\varphi_k(x)\ dx=\int_{[a,b]}^\mathcal{L}\varphi_k(x)\ dx \text{ and }\cal \int_{[a,b]}^R\psi_k(x)\ dx=\cal \int_{[a,b]}^L\psi_k(x)\ dx.
+\cal \int_{[a,b]}^R\varphi_k(x)\ dx=\int_{[a,b]}^L\varphi_k(x)\ dx,
+\]
+and
+\[
+\cal \int_{[a,b]}^R\psi_k(x)\ dx=\cal \int_{[a,b]}^L\psi_k(x)\ dx.
 \]
 Consider Theorem \ref{thm:b} (Bounded convergence theorem) and you will complete the proof.
 
@@ -992,6 +996,8 @@ By Theorem \ref{thm:d}, find a continuous function with compact support to appro
 \chapter{Differentiation and Integration}\label{ch3}
 
 \section{Differentiation of the integral}\label{differentiation-of-the-integral}
+
+We may ask whether
 
   \bibliography{book.bib,packages.bib}
 
